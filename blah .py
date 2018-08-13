@@ -1,5 +1,4 @@
 
-
 # the first question:
 
 answer = input("how many trees are cut down each day for toilet paper?, A = 50,000 , B = 20,250 , C = 27,000 , D = 150,000 ")
@@ -72,9 +71,3 @@ elif answer5 == "C" or answer5 == "c" :
 elif answer5 == "D" or answer5 == "d":
     print(" D stands for DON'T") 
 
-
-
-
-
-
-    
