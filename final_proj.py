@@ -25,8 +25,6 @@ ready = input("are you ready!? >_<")
 if ready == "yes" :
     bottle.goto(0,50)
     bottle.ht()
-####### WRITE THE Q/A's HERE!  :
-
 
 
 answer1 = input("3+3?")
@@ -35,17 +33,6 @@ if answer1 == '6':
     correct =True
 else:
     correct = False
-
-
-
-
-
-
-
-
-
-
-    ######################################################################################
 
 new_bottle = turtle.clone()
 turtle.register_shape('/home/student/siwarkhateb20_final-proj/meet2018y1final-proj/ezgif-4-1105f2a5f5 (1).gif')
