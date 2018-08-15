@@ -21,7 +21,7 @@ if name == "caleb" :
     turtle.up()
     turtle.goto(0,400)
     turtle.down()
-    turtle.write( str(name )  +"you are the best instructor evveer, we love you!!",move=False,align="center",font=("Arial",30))
+    turtle.write( str(name)  +"you are the best instructor evveer, we love you!!",move=False,align="center",font=("Arial",30))
     turtle.stamp()
     turtle.ht()
 
