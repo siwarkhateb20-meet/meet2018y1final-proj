@@ -1,11 +1,32 @@
 import turtle
 import random
+import time
+
+'''
+def stop(x,y):
+    print('function')
+    global run
+    run=False
+
+run = True
+while run:
+    print(run)
+    turtle.onclick(stop)
+    turtle.listen()
+'''
+#music
+from pygame import mixer # Load the required library
+mixer.init()
+
+
+
+    
 #firs bottle
 bottle = turtle.clone()
 turtle.register_shape('used_waterbottle.gif')
 bottle.shape("used_waterbottle.gif")
 
-
+#the machine
 screen = turtle.Screen()
 screen.setup(1000,1000)
 screen.bgpic('machine1.gif')
@@ -14,8 +35,8 @@ bottle.penup()
 bottle.speed(1)
 bottle.goto(400,50)
 bottle.showturtle()
-
-name = input("enter your name plz ")
+#ENTER YOUR NAME
+name = turtle.textinput("","enter your name plz ")
 
 if name == "caleb" :
     turtle.up()
@@ -30,19 +51,20 @@ if name != "caleb" :
     turtle.up()
     turtle.goto(0,400)
     turtle.down()
-    turtle.write("hey , "+name,move=False,align="center",font=("Arial",30))
+    turtle.write("hey ," + name ,move=False,align="center",font=("Arial",30))
     turtle.stamp()
     turtle.ht()
 
 
 
-ready = input("are you ready!? >_<")
+ready = turtle.textinput("","are you ready!? >_<")
 if ready == "yes" :
     bottle.goto(150,50)
     bottle.ht()
 
 elif ready == "no" :
-    print("we dont care, you have to play")
+    turtle.clear()
+    turtle.write("we dont care, you have to play",move=False,align="center",font=("Arial",30))
     bottle.goto(150,50)
     bottle.ht()
 
@@ -62,7 +84,9 @@ if answer == "A" or answer == "a":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect")
+    print("incorrect , the rght answer was C")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer == "B" or answer == "b":
 
@@ -71,7 +95,9 @@ elif answer == "B" or answer == "b":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect")
+    print("incorrect , the rght answer was C")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer == "C" or answer == "c" :
     
@@ -81,6 +107,8 @@ elif answer == "C" or answer == "c" :
     turtle.clear()
     turtle.write("correct",font=("Arial",30))
     print("correct")
+    mixer.music.load('correct.mp3')
+    mixer.music.play()
     bottles += 1
     correct_answers += 1
     
@@ -91,7 +119,9 @@ elif answer == "D" or answer == "d":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect")
+    print("incorrect , the rght answer was C")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
 
 # the secound question:
 
@@ -102,7 +132,9 @@ if answer1 == "A" or answer1 == "a":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect")
+    print("incorrect , the rght answer was B")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer1 == "B" or answer1 == "b":
     turtle.pu()
@@ -111,6 +143,8 @@ elif answer1 == "B" or answer1 == "b":
     turtle.clear()
     turtle.write("correct",font=("Arial",30))
     print("correct")
+    mixer.music.load('correct.mp3')
+    mixer.music.play()
     bottles += 1
     correct_answers += 1
 
@@ -120,7 +154,9 @@ elif answer1 == "C" or answer1 == "c":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect")
+    print("incorrect , the rght answer was B")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer1 == "D" or answer1 == "d":
     turtle.pu()
@@ -128,7 +164,9 @@ elif answer1 == "D" or answer1 == "d":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect")
+    print("incorrect , the rght answer was B")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
 
 #the third question:
 
@@ -140,6 +178,8 @@ if answer2 == "A" or answer2 == "a":
     turtle.clear()
     turtle.write("correct",font=("Arial",30))
     print("correct")
+    mixer.music.load('correct.mp3')
+    mixer.music.play()
     bottles += 1
     correct_answers += 1
     
@@ -149,7 +189,9 @@ elif answer2 == "B" or answer2 == "b":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print(" incorrect ")
+    print(" incorrect , the rght answer was A ")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer2 == "C" or answer2 == "c" :
     turtle.pu()
@@ -157,7 +199,9 @@ elif answer2 == "C" or answer2 == "c" :
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print(" incorrect")
+    print(" incorrect , the rght answer was A")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer2 == "D" or answer2 == "d":
     turtle.pu()
@@ -165,7 +209,9 @@ elif answer2 == "D" or answer2 == "d":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print(" incorrect")
+    print(" incorrect , the rght answer was A")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
 
 # the forth question:
 
@@ -177,6 +223,8 @@ if answer3 == "A" or answer3 == "a":
     turtle.clear()
     turtle.write("correct",font=("Arial",30))
     print( "correct")
+    mixer.music.load('correct.mp3')
+    mixer.music.play()
     bottles += 1
     correct_answers += 1
 
@@ -186,7 +234,9 @@ elif answer3 == "B" or answer3 == "b":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print(" incorrect")
+    print(" incorrect , the rght answer was A")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
 
 
 elif answer3 == "C" or answer3 == "c" :
@@ -195,7 +245,9 @@ elif answer3 == "C" or answer3 == "c" :
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print(" incorrect")
+    print(" incorrect , the rght answer was A")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer3 == "D" or answer3 == "d":
     turtle.pu()
@@ -203,7 +255,9 @@ elif answer3 == "D" or answer3 == "d":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect")
+    print("incorrect , the rght answer was A")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
 
 # the fifth question:
 
@@ -215,7 +269,9 @@ if answer4 == "A" or answer4 == "a":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print( "incorrect")
+    print( " incorrect , the rght answer was B")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer4 == "B" or answer4 == "b":
     turtle.pu()
@@ -224,6 +280,8 @@ elif answer4 == "B" or answer4 == "b":
     turtle.clear()
     turtle.write("correct",font=("Arial",30))
     print("correct")
+    mixer.music.load('correct.mp3')
+    mixer.music.play()
     bottles += 1
     correct_answers += 1
 
@@ -233,7 +291,9 @@ elif answer4 == "C" or answer4 == "c" :
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect")
+    print("incorrect , the rght answer was B")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer4 == "D" or answer4 == "d":
     turtle.pu()
@@ -241,7 +301,9 @@ elif answer4 == "D" or answer4 == "d":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect")
+    print("incorrect , the rght answer was B")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
 
 # the sixth question:
 
@@ -254,6 +316,8 @@ if answer5 == "A" or answer5 == "a":
     turtle.clear()
     turtle.write("correct",font=("Arial",30))
     print( "correct")
+    mixer.music.load('correct.mp3')
+    mixer.music.play()
     bottles += 1
     correct_answers += 1
 
@@ -263,8 +327,9 @@ elif answer5 == "B" or answer5 == "b":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    correct = True
-    print("incorrect")
+    print("incorrect , the rght answer was A")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
 
 elif answer5 == "C" or answer5 == "c" :
     turtle.pu()
@@ -272,7 +337,9 @@ elif answer5 == "C" or answer5 == "c" :
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect ")
+    print("incorrect , the rght answer was A")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
     
 elif answer5 == "D" or answer5 == "d":
     turtle.pu()
@@ -280,7 +347,9 @@ elif answer5 == "D" or answer5 == "d":
     turtle.pencolor("red")
     turtle.clear()
     turtle.write("incorrect",font=("Arial",30))
-    print("incorrect") 
+    print("incorrect , the rght answer was A")
+    mixer.music.load('incorrect.mp3')
+    mixer.music.play()
 
 
 #####################################################################################################################################
@@ -306,7 +375,27 @@ for i in range(bottles):
 turtle.goto(0,300)
 
 turtle.pencolor("blue")
-turtle.write("You answered " + str(correct_answers) + " correct answers" ,align ="center",font=("Arial", 24))
+turtle.write("You answered " + str(correct_answers) + " / 6 correct answers" ,align ="center",font=("Arial", 24))
 
+time.sleep(2)
+
+if bottles == 6 :
+    turtle.register_shape("c.gif")
+    #turtle.clear()
+    #turtle.showturtle()
+    congrats = turtle.clone()
+    congrats.st()
+    congrats.goto(0,450)
+    congrats.shape('c.gif')
+
+print(bottles)
+if bottles == 0 :
+    turtle.register_shape("try_again.gif")
+    try_again = turtle.clone()
+    try_again.st()
+    try_again.goto(0,430)
+    try_again.shape('try_again.gif')
+    
+        
 turtle.mainloop()
 
